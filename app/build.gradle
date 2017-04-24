@@ -1,0 +1,103 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+
+repositories {
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        applicationId "com.stop.zparkingzj"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "buildTypeName", "正式"
+//            resValue "string", "serverIP", "120.77.150.40"
+//            resValue "integer", "serverPort", "80"
+            resValue "string", "serverIP", "192.168.1.48"
+            resValue "integer", "serverPort", "8091"
+            resValue "bool", "enableEditSetting", "false"
+            resValue "bool", "showDebugToolbar", "false"
+            debuggable true
+
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "buildTypeName", "正式"
+            resValue "string", "serverIP", "120.77.150.40"
+            resValue "integer", "serverPort", "80"
+            resValue "bool", "enableEditSetting", "true"
+            resValue "bool", "showDebugToolbar", "true"
+        }
+
+        productFlavors {
+            hastags {//有地磁版
+                resValue "string", "productFlavorName", "有地磁版"
+                resValue "string", "productFlavorCode", "hastag"
+//                resValue "string", "serverAppHost", "zhanjiang.zparking.cn:80"
+//                resValue "string", "serverAppPath", "ZparkingWorkerManagerWeb"
+//                resValue "string", "serverVersionHost", "zhanjiang.zparking.cn:80"
+                resValue "string", "serverAppHost", "192.168.1.48:8091"
+                resValue "string", "serverAppPath", "ZparkingWorkerManagerWeb"
+                resValue "string", "serverVersionHost", "192.168.1.48:8091"
+
+                resValue "string", "serverVersionPath", "version"
+            }
+        }
+
+    }
+
+    dataBinding{
+        enabled true
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:recyclerview-v7:25.0.1'
+    //适配
+    compile 'com.zhy:autolayout:1.4.5'
+    //dagger2
+    compile 'com.google.dagger:dagger:2.5'
+    apt 'com.google.dagger:dagger-compiler:2.5'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    //Retrofit2.0
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.squareup.okhttp3:okhttp-ws:3.3.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+    //rxAndroid
+    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile files('libs/pki.jar')
+    compile files('libs/plate_id_sdk.jar')
+    compile files('libs/qrcode.jar')
+    compile files('libs/android_auth.jar')
+    compile files('libs/eptapilibrary.jar')
+    compile files('libs/core-3.2.1.jar')
+    compile files('libs/smartdevicesdk.jar')
+}

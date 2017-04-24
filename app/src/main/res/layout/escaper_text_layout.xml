@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/escaper_onClick"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/escaper_carNumber"
+            android:layout_width="0px"
+            android:layout_height="55px"
+            android:layout_weight="1.5"
+            android:textSize="20px"
+            android:gravity="center"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/escaper_stopTime"
+            android:layout_width="0px"
+            android:layout_height="50px"
+            android:layout_weight="2"
+            android:textSize="22px"
+            android:gravity="center"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="50px"
+            android:layout_weight="1"
+            android:textSize="22px"
+            android:gravity="center"
+            android:text="未处理"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

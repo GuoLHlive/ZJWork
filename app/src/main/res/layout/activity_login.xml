@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+
+    </data>
+
+
+    <LinearLayout
+        android:paddingTop="5px"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <ImageView
+            android:layout_width="260px"
+            android:layout_height="0px"
+            android:layout_weight="10"
+            android:src="@drawable/logozj"
+            android:layout_gravity="center"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="5px"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="湛江交投停车服务经营有限公司"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="15px"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="路边停车管理客户端"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="20px"
+                android:layout_marginTop="10px"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="10"
+            android:gravity="center"
+            android:padding="20px"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="请将卡放在上方的感应区域"
+                android:textSize="20px"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:background="@drawable/layout_login_text_line"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="2"
+            android:paddingRight="10px"
+            android:paddingBottom="5px"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/zwlogo"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20px"
+                />
+            <TextView
+                android:id="@+id/login_"
+                android:layout_width="100px"
+                android:layout_height="match_parent"
+                android:text="账号登录"
+                android:textSize="20px"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/layout_login_text_line"
+                />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

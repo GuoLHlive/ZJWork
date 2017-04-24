@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">交投停车</string>
+
+
+    <string name="admin_title">个人中心</string>
+    <string name="admin_logout">注销</string>
+    <string name="admin_title1">本班次收入统计（元）</string>
+    <string name="admin_title2">余下车位</string>
+
+    <string name="login_title">请输入信息：</string>
+    <string name="login_username">请输入员工编号</string>
+    <string name="login_password">请输入密码</string>
+    <string name="company_name">北京文通科技有限公司</string>
+
+    <!-- 设置属性名称 -->
+    <string-array name="ArrayStringKeyName">
+        <item>buildTypeName</item>
+        <item>serverIP</item>
+        <item>serverPort</item>
+        <item>productFlavorName</item>
+        <item>productFlavorCode</item>
+        <item>serverAppHost</item>
+        <item>serverAppPath</item>
+        <item>serverVersionHost</item>
+        <item>serverVersionPath</item>
+    </string-array>
+
+    <string name="name">停车项目</string>
+    <string name="pay">收费栏</string>
+    <string name="admin">用户</string>
+    <string name="escape">逃费栏</string>
+    <string name="complete">查询栏</string>
+    <string name="setting">设置</string>
+    <string name="login">登录界面</string>
+    <string name="main">主界面</string>
+
+    <string name="pay_dialog_title">请输入退还金额：</string>
+    <string name="save">确定</string>
+    <string name="esc">取消</string>
+
+    <string name="pay_pay">1缴费</string>
+
+    <string name="pay_bnt_carNumber">5车牌信息</string>
+
+    <string name="pay_readPay">1预交/缴费</string>
+    <string name="pay_refund">2退钱</string>
+    <string name="pay_escOrder">3取消订单</string>
+    <string name="pay_r_print">4打印凭条</string>
+
+    <string name="pay_cash">1确定收费</string>
+    <!-- 2退钱 -->
+    <string name="pay_task">3车辆离开</string>
+    <!-- 4凭条 -->
+
+    <!-- 1确定收费-->
+    <string name="pay_escape">2确定逃费</string>
+    <!-- 3取消订单 -->
+    <!-- 4凭条 -->
+
+    <string name="pay_print_money">1打印收据</string>
+    <string name="pay_carOut">2车辆离开</string>
+
+
+</resources>

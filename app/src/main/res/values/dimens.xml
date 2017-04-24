@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16px</dimen>
+    <dimen name="activity_vertical_margin">16px</dimen>
+
+    <dimen name="main_item_size">130px</dimen>
+    <dimen name="login_dialog_size_width">250px</dimen>
+    <dimen name="login_dialog_size_height">200px</dimen>
+
+
+    <dimen name="pay_dialog_size_width">300dp</dimen>
+    <dimen name="pay_dialog_size_height">230dp</dimen>
+</resources>
