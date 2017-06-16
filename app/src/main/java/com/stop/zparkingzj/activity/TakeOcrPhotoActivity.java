@@ -124,6 +124,10 @@ public class TakeOcrPhotoActivity extends BaseActivity {
 
                             }
                         }else {
+                            int indexOf = result.indexOf(";");
+                            if (indexOf!=-1){
+                               result = result.substring(0,indexOf);
+                            }
                             Intent intent = new Intent(activity,PayActivity.class);
                             TakePhotoBean takePhotoBean = new TakePhotoBean(result,parkingOrderId);
                             intent.putExtra("TakePhotoBean", takePhotoBean);

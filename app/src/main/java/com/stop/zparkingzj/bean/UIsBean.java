@@ -414,13 +414,12 @@ public class UIsBean {
         private ParkingOrderInteractor parkingOrderInteractor;
         private UIBean uiBean;
         private Context context;
-        private Map<Integer,String> payState;
         public Listener(UIBean uiBean) {
             this.uiBean = uiBean;
             this.context = uiBean.getContext();
             this.appComponent = MyApp.getApp(context).component();
             this.parkingOrderInteractor = appComponent.getParkingOrderInteractor();
-            this.payState = MyApp.getPayState();
+
         }
 
         @Override
@@ -448,7 +447,6 @@ public class UIsBean {
                             UIsBean uIsBean = appComponent.getUIsBean();
                             ArrayList<UIBean> upTimeData = uIsBean.getUpTimeData();
                             upTimeData.add(uiBean);
-                            payState.put(parkingOrderId,Config.READPAY);
 
                             Intent intent = new Intent(context,PayActivity.class);
                             intent.putExtra("parkingOrderId",uiBean.getParkingOrderId());

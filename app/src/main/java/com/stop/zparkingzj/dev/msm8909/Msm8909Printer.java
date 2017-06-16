@@ -76,16 +76,19 @@ public class Msm8909Printer implements IPrinter {
                             //state == 1 打印凭条
                             if (state == 1){
                             title = "湛江路边停车凭证";
-                            s = "\n"+license_plate+"\n"+stop_number+"\n"+long_time+"\n"+"收费员："+userName+"\n"
-                                +"预交费用："+realFare+"元"+"\n"+"打印时间："+thisTime+"\n"+"-------------------------"+"\n"+
-                                Config.PRINTTEXT1;
+                            s = "\n"+"收费单位：湛江交投城市停车服务经营有限公司"+"\n"+license_plate+"\n"+stop_number+"\n"+long_time+"\n"+"收费员："+userName+"\n" +
+//                                    "预交费用："+realFare+"元"+
+//                                    "\n"+"打印时间："+thisTime+"\n"+
+                                    "-------------------------"+"\n"+
+                                Config.PRINTTEXT4;
                             }else
                             //收据
                             if (state ==2){
                                 title = "湛江路边停车收据";
-                                s = "\n收费单位：湛江交投城市停车服务经营有限公司\n"+"收费员："+userName+""
-                                        +"\n"+license_plate+"\n"+stop_number+"\n"+long_time+"\n"+"出场时间："
-                                        +thisTime+"\n"+come_time+"\n"+"停车费用："+money+"元"+"\n"+"已付款："+
+                                s = "\n"+"收费单位：湛江交投城市停车服务经营有限公司\n"+"收费员："+userName+""
+                                        +"\n"+license_plate+"\n"+stop_number+"\n"+long_time+
+//                                        "\n"+"出场时间：" +thisTime +
+                                        "\n"+come_time+"\n"+"停车费用："+money+"元"+"\n"+"已付款："+
                                         realFare+"元"+"\n"+"打印时间："+thisTime+"\n"+"-------------------------"+"\n"+
                                         Config.PRINTTEXT2;
                             }

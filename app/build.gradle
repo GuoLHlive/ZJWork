@@ -9,23 +9,22 @@ repositories {
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
-
     defaultConfig {
         applicationId "com.stop.zparkingzj"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName '1.2.3'
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             resValue "string", "buildTypeName", "正式"
-//            resValue "string", "serverIP", "120.77.150.40"
-//            resValue "integer", "serverPort", "80"
-            resValue "string", "serverIP", "192.168.1.48"
-            resValue "integer", "serverPort", "8091"
+            resValue "string", "serverIP", "120.77.150.40"
+            resValue "integer", "serverPort", "80"
+//            resValue "string", "serverIP", "192.168.1.48"
+//            resValue "integer", "serverPort", "8091"
             resValue "bool", "enableEditSetting", "false"
             resValue "bool", "showDebugToolbar", "false"
             debuggable true
@@ -44,32 +43,30 @@ android {
         }
 
         productFlavors {
-            hastags {//有地磁版
+            hastags {
+                //有地磁版
                 resValue "string", "productFlavorName", "有地磁版"
                 resValue "string", "productFlavorCode", "hastag"
-//                resValue "string", "serverAppHost", "zhanjiang.zparking.cn:80"
-//                resValue "string", "serverAppPath", "ZparkingWorkerManagerWeb"
-//                resValue "string", "serverVersionHost", "zhanjiang.zparking.cn:80"
-                resValue "string", "serverAppHost", "192.168.1.48:8091"
+                resValue "string", "serverAppHost", "zhanjiang.zparking.cn:80"
                 resValue "string", "serverAppPath", "ZparkingWorkerManagerWeb"
-                resValue "string", "serverVersionHost", "192.168.1.48:8091"
+                resValue "string", "serverVersionHost", "zhanjiang.zparking.cn:80"
+//                resValue "string", "serverAppHost", "192.168.1.48:8091"
+//                resValue "string", "serverAppPath", "ZparkingWorkerManagerWeb"
+//                resValue "string", "serverVersionHost", "192.168.1.48:8091"
 
                 resValue "string", "serverVersionPath", "version"
             }
         }
 
-    }
-
-    dataBinding{
+}
+    dataBinding {
         enabled true
     }
-
     lintOptions {
         abortOnError false
     }
-
-
-
+    productFlavors {
+    }
 }
 
 dependencies {
@@ -93,6 +90,8 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    //更新第三方 蒲公英
+    compile 'com.pgyersdk:sdk:2.4.5'
     compile files('libs/pki.jar')
     compile files('libs/plate_id_sdk.jar')
     compile files('libs/qrcode.jar')
@@ -101,3 +100,4 @@ dependencies {
     compile files('libs/core-3.2.1.jar')
     compile files('libs/smartdevicesdk.jar')
 }
+

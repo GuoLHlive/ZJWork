@@ -3,9 +3,7 @@ package com.stop.zparkingzj.view;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.InputType;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.stop.zparkingzj.R;
+import com.stop.zparkingzj.bean.ReadyPayDialogBean;
 
 /**
  * Created by Administrator on 2017/3/16.
@@ -30,14 +29,18 @@ public class ReadyPay_Dialog_View extends AlertDialog {
     private String carCount;
     private String[] mTxtMoney;
     private getUserInput input;
+    private String carMoney;//收费金额
+    private boolean isReadyPay;
     public interface getUserInput{
         void Input(String s);
     }
 
-    public ReadyPay_Dialog_View(Context context,String carCount,getUserInput input) {
+    public ReadyPay_Dialog_View(Context context, ReadyPayDialogBean data, getUserInput input) {
         super(context);
-        this.carCount = carCount;
+        this.carCount = data.getCarCount();
         this.input = input;
+        this.carMoney = data.getCarMoney();
+        this.isReadyPay = data.isReadyPay();
     }
 
 
@@ -83,7 +86,11 @@ public class ReadyPay_Dialog_View extends AlertDialog {
                     if (i==1){
                         mTxt.setText(mTxtMoney[0]);
                         mTxt.setVisibility(View.VISIBLE);
-                        mMoney.setText(mTxt.getText().toString());
+                        if (isReadyPay){
+                            mMoney.setText(mTxtMoney[0]);
+                        }else {
+                            mMoney.setText(carMoney);
+                        }
                         mMoney.setSelection(mMoney.length());
                     }
                     if (i == 3){
@@ -103,7 +110,11 @@ public class ReadyPay_Dialog_View extends AlertDialog {
                     }
 
                     if (i==0){
-                        mMoney.setText(mTxt.getText().toString());
+                        if (isReadyPay){
+                            mMoney.setText(mTxtMoney[i]);
+                        }else {
+                            mMoney.setText(carMoney);
+                        }
                         mMoney.setSelection(mMoney.length());
                     }
                 }
@@ -115,7 +126,11 @@ public class ReadyPay_Dialog_View extends AlertDialog {
                     mTxt.setOnClickListener(onClick);
                     mTxt.setTag(i);
                     if (i==1){
-                        mMoney.setText(mTxt.getText().toString());
+                        if (isReadyPay){
+                            mMoney.setText(mTxtMoney[i]);
+                        }else {
+                            mMoney.setText(carMoney);
+                        }
                         mMoney.setSelection(mMoney.length());
                     }
                 }

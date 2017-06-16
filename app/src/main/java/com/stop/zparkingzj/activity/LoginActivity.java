@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 
 import com.google.gson.Gson;
+import com.pgyersdk.update.PgyUpdateManager;
 import com.stop.zparkingzj.MainActivity;
 import com.stop.zparkingzj.R;
 import com.stop.zparkingzj.api.lmpl.BaseSubscriber;
@@ -38,6 +39,7 @@ public class LoginActivity extends BaseActivity {
     private BaseActivity activity;
     private SystemService systemService;
     private ActivityLoginBinding binding;
+    private static boolean ISUPDATA = false;//更新状态
 
     @Override
     protected int getLayoutId() {
@@ -55,7 +57,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        PgyUpdateManager.register(this);
         //账号密码登录
         binding.login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +80,7 @@ public class LoginActivity extends BaseActivity {
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     activity.startActivity(intent);
                                     activity.finish();
+                                    outUpdata();
                                 }else {
                                     showToast.showToastTxt(activity,loginReturnBean.getMsg());
                                 }
@@ -131,6 +134,7 @@ public class LoginActivity extends BaseActivity {
         return super.onKeyUp(keyCode, event);
     }
 
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -159,6 +163,7 @@ public class LoginActivity extends BaseActivity {
                         activitys.remove(activity);
                         activity.finish();
                     }
+                    outUpdata();
                 }
 
                 @Override
@@ -170,6 +175,8 @@ public class LoginActivity extends BaseActivity {
                         BaseActivity baseActivity = activitys.get(0);
                         baseActivity.finish();
                         activitys.remove(baseActivity);
+                        outUpdata();
+
                     }
                 }
             });
@@ -199,8 +206,14 @@ public class LoginActivity extends BaseActivity {
             @Override
             protected void onSuccess(String result) {
                 Log.i("RetrofitLog","result:"+result);
+                outUpdata();
             }});
     }
+
+    private void outUpdata(){
+            PgyUpdateManager.unregister();
+    }
+
 
 
 }

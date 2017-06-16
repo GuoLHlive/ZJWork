@@ -27,7 +27,7 @@ public class MyApp extends Application {
     private static MyApp myApp;
 
 
-    public static Map<Integer,String> PayState;
+
 
     //SharePreferences存储地址
     private String absolutePath = "";
@@ -36,7 +36,7 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         myApp = this;
-        PayState = new HashMap<>();
+
         setDraggerConfig();
         //设置初始化
         setSharePreferences();
@@ -55,9 +55,7 @@ public class MyApp extends Application {
         return myApp;
     }
 
-    public static Map<Integer,String> getPayState(){
-        return PayState;
-    }
+
 
     private void setDraggerConfig() {
         appComponent =  DaggerAppComponent.builder().

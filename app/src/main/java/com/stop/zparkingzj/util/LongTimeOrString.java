@@ -94,7 +94,7 @@ public class LongTimeOrString {
         }
         int ss = (int) (time / 1000);//总共的秒数
         Log.i("Bean","秒数:"+ss);
-        if (ss>900){
+        if (ss<900){
             return true;
         }
         return false;

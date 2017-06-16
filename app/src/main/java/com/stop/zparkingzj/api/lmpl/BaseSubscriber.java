@@ -56,12 +56,11 @@ public abstract class BaseSubscriber<T> extends Subscriber<T> implements Progres
     @Override
     public void onError(Throwable e) {
         dismissProgressDialog();
-        Toast.makeText(context,e.getMessage(), Toast.LENGTH_SHORT).show();
-//        try {
-//            Toast.makeText(context, "网络连接失败...", Toast.LENGTH_SHORT).show();
-//        } catch (Exception e1) {
-//            e1.printStackTrace();
-//        }
+        try {
+            Toast.makeText(context, "网络连接失败...请重新刷卡登录", Toast.LENGTH_SHORT).show();
+        } catch (Exception e1) {
+            Toast.makeText(context,"发生未知错误...", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

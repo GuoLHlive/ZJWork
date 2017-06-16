@@ -1,5 +1,7 @@
 package com.stop.zparkingzj.bean;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/1/18.
  */
@@ -8,10 +10,10 @@ public class ParkingOrderDetailBean {
 
     /**
      * success : true
-     * date : 2017-03-27 10:09:23
+     * date : 2017-05-19 15:53:59
      * type : data
      * code : 0
-     * data : {"parkingOrderId":324,"recordNo":"PAA-20170327100744-10001","parkId":0,"parkSectionId":0,"parkSeatId":-3,"vehicleNo":"粤X12345","vehicleType":"02","isParking":"yes","photoDir":null,"isSpecial":"no","parkingTime":1490580464000,"leaveTime":null,"payStatus":"no_pay","payType":null,"dueFare":0,"realFare":0,"status":"normal","payTime":null,"remark":null,"createTime":1490580464000,"updateTime":1490580464000,"mobileUrl":"http://www.baidu.com"}
+     * data : {"parkingOrderId":443,"recordNo":"PAA-20170510163059-10002","parkId":-1,"parkSectionId":-1,"parkSeatId":-4,"vehicleNo":"辽AU9595","vehicleType":"99","isParking":"yes","photoDir":null,"isSpecial":"no","parkingTime":1494405059000,"leaveTime":null,"payStatus":"no_pay","payType":null,"dueFare":600,"realFare":0,"status":"normal","payTime":null,"remark":null,"createTime":1494405059000,"updateTime":1494405059000,"orderType":"normal","vehicleTypeText":null,"parkName":null,"seatNo":null,"payStatusText":null,"payTypeText":null,"createUserName":null,"registerParkingUserName":null,"confirmLeaveUserName":null,"orderStatusText":null,"imgIds":[],"mobileUrl":null}
      */
 
     private boolean success;
@@ -62,28 +64,39 @@ public class ParkingOrderDetailBean {
 
     public static class DataBean {
         /**
-         * parkingOrderId : 324
-         * recordNo : PAA-20170327100744-10001
-         * parkId : 0
-         * parkSectionId : 0
-         * parkSeatId : -3
-         * vehicleNo : 粤X12345
-         * vehicleType : 02
+         * parkingOrderId : 443
+         * recordNo : PAA-20170510163059-10002
+         * parkId : -1
+         * parkSectionId : -1
+         * parkSeatId : -4
+         * vehicleNo : 辽AU9595
+         * vehicleType : 99
          * isParking : yes
          * photoDir : null
          * isSpecial : no
-         * parkingTime : 1490580464000
+         * parkingTime : 1494405059000
          * leaveTime : null
          * payStatus : no_pay
          * payType : null
-         * dueFare : 0.0
+         * dueFare : 600.0
          * realFare : 0.0
          * status : normal
          * payTime : null
          * remark : null
-         * createTime : 1490580464000
-         * updateTime : 1490580464000
-         * mobileUrl : http://www.baidu.com
+         * createTime : 1494405059000
+         * updateTime : 1494405059000
+         * orderType : normal
+         * vehicleTypeText : null
+         * parkName : null
+         * seatNo : null
+         * payStatusText : null
+         * payTypeText : null
+         * createUserName : null
+         * registerParkingUserName : null
+         * confirmLeaveUserName : null
+         * orderStatusText : null
+         * imgIds : []
+         * mobileUrl : null
          */
 
         private int parkingOrderId;
@@ -99,7 +112,7 @@ public class ParkingOrderDetailBean {
         private long parkingTime;
         private Object leaveTime;
         private String payStatus;
-        private String payType;
+        private Object payType;
         private double dueFare;
         private double realFare;
         private String status;
@@ -107,7 +120,18 @@ public class ParkingOrderDetailBean {
         private Object remark;
         private long createTime;
         private long updateTime;
-        private String mobileUrl;
+        private String orderType;
+        private Object vehicleTypeText;
+        private Object parkName;
+        private Object seatNo;
+        private Object payStatusText;
+        private Object payTypeText;
+        private Object createUserName;
+        private Object registerParkingUserName;
+        private Object confirmLeaveUserName;
+        private Object orderStatusText;
+        private Object mobileUrl;
+        private List<?> imgIds;
 
         public int getParkingOrderId() {
             return parkingOrderId;
@@ -213,11 +237,11 @@ public class ParkingOrderDetailBean {
             this.payStatus = payStatus;
         }
 
-        public String getPayType() {
+        public Object getPayType() {
             return payType;
         }
 
-        public void setPayType(String payType) {
+        public void setPayType(Object payType) {
             this.payType = payType;
         }
 
@@ -277,12 +301,100 @@ public class ParkingOrderDetailBean {
             this.updateTime = updateTime;
         }
 
-        public String getMobileUrl() {
+        public String getOrderType() {
+            return orderType;
+        }
+
+        public void setOrderType(String orderType) {
+            this.orderType = orderType;
+        }
+
+        public Object getVehicleTypeText() {
+            return vehicleTypeText;
+        }
+
+        public void setVehicleTypeText(Object vehicleTypeText) {
+            this.vehicleTypeText = vehicleTypeText;
+        }
+
+        public Object getParkName() {
+            return parkName;
+        }
+
+        public void setParkName(Object parkName) {
+            this.parkName = parkName;
+        }
+
+        public Object getSeatNo() {
+            return seatNo;
+        }
+
+        public void setSeatNo(Object seatNo) {
+            this.seatNo = seatNo;
+        }
+
+        public Object getPayStatusText() {
+            return payStatusText;
+        }
+
+        public void setPayStatusText(Object payStatusText) {
+            this.payStatusText = payStatusText;
+        }
+
+        public Object getPayTypeText() {
+            return payTypeText;
+        }
+
+        public void setPayTypeText(Object payTypeText) {
+            this.payTypeText = payTypeText;
+        }
+
+        public Object getCreateUserName() {
+            return createUserName;
+        }
+
+        public void setCreateUserName(Object createUserName) {
+            this.createUserName = createUserName;
+        }
+
+        public Object getRegisterParkingUserName() {
+            return registerParkingUserName;
+        }
+
+        public void setRegisterParkingUserName(Object registerParkingUserName) {
+            this.registerParkingUserName = registerParkingUserName;
+        }
+
+        public Object getConfirmLeaveUserName() {
+            return confirmLeaveUserName;
+        }
+
+        public void setConfirmLeaveUserName(Object confirmLeaveUserName) {
+            this.confirmLeaveUserName = confirmLeaveUserName;
+        }
+
+        public Object getOrderStatusText() {
+            return orderStatusText;
+        }
+
+        public void setOrderStatusText(Object orderStatusText) {
+            this.orderStatusText = orderStatusText;
+        }
+
+        public Object getMobileUrl() {
             return mobileUrl;
         }
 
-        public void setMobileUrl(String mobileUrl) {
+        public void setMobileUrl(Object mobileUrl) {
             this.mobileUrl = mobileUrl;
+        }
+
+        public List<?> getImgIds() {
+            return imgIds;
+        }
+
+        public void setImgIds(List<?> imgIds) {
+            this.imgIds = imgIds;
         }
 
         @Override
@@ -309,7 +421,18 @@ public class ParkingOrderDetailBean {
                     ", remark=" + remark +
                     ", createTime=" + createTime +
                     ", updateTime=" + updateTime +
-                    ", mobileUrl='" + mobileUrl + '\'' +
+                    ", orderType='" + orderType + '\'' +
+                    ", vehicleTypeText=" + vehicleTypeText +
+                    ", parkName=" + parkName +
+                    ", seatNo=" + seatNo +
+                    ", payStatusText=" + payStatusText +
+                    ", payTypeText=" + payTypeText +
+                    ", createUserName=" + createUserName +
+                    ", registerParkingUserName=" + registerParkingUserName +
+                    ", confirmLeaveUserName=" + confirmLeaveUserName +
+                    ", orderStatusText=" + orderStatusText +
+                    ", mobileUrl=" + mobileUrl +
+                    ", imgIds=" + imgIds +
                     '}';
         }
     }

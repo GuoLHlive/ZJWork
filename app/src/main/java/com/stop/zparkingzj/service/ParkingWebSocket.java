@@ -41,13 +41,12 @@ public class ParkingWebSocket implements WebSocketListener {
 
     private WebSocket mWebSocket = null;
     private OkHttpClient client;
-    private Map<Integer,String> payState;
     private UIsBean uIsBean;
 
 
-//    private static final String url = "ws://zhanjiang.zparking.cn:80/ZparkingWorkerManagerWeb/common.do";
+    private static final String url = "ws://zhanjiang.zparking.cn:80/ZparkingWorkerManagerWeb/common.do";
 
-    private static final String url = "ws://192.168.1.48:8091/ZparkingWorkerManagerWeb/common.do";
+//    private static final String url = "ws://192.168.1.48:8091/ZparkingWorkerManagerWeb/common.do";
     private static final String TAG = "ParkingWebSocket";
 
 
@@ -55,7 +54,7 @@ public class ParkingWebSocket implements WebSocketListener {
 
     public ParkingWebSocket(OkHttpClient client) {
         this.client = client;
-        this.payState = MyApp.getPayState();
+
     }
 
     public void openWebSocket(UIsBean uIsBean,BaseActivity activity){
@@ -182,18 +181,18 @@ public class ParkingWebSocket implements WebSocketListener {
                                         uiBean.setIsVisual(View.GONE);
                                         uiBean.setStringParkingTime("空 闲");
                                         vehicleNo = "";
-                                        Log.i("Bean","payStateSize"+payState.size()+"");
-                                        //删除payState里面的数据
-                                        Iterator<Map.Entry<Integer, String>> iterator = payState.entrySet().iterator();
-                                        while (iterator.hasNext()) {
-                                            Map.Entry<Integer, String> entry = iterator.next();
-                                            Integer key = entry.getKey();
-                                            Log.i("Bean", "Key:" + key + "");
-                                            if (key == parkingOrderId) {
-                                                iterator.remove();
-                                                Log.i("Bean", "payStateSize" + payState.size() + "");
-                                            }
-                                        }
+//                                        Log.i("Bean","payStateSize"+payState.size()+"");
+//                                        //删除payState里面的数据
+//                                        Iterator<Map.Entry<Integer, String>> iterator = payState.entrySet().iterator();
+//                                        while (iterator.hasNext()) {
+//                                            Map.Entry<Integer, String> entry = iterator.next();
+//                                            Integer key = entry.getKey();
+//                                            Log.i("Bean", "Key:" + key + "");
+//                                            if (key == parkingOrderId) {
+//                                                iterator.remove();
+//                                                Log.i("Bean", "payStateSize" + payState.size() + "");
+//                                            }
+//                                        }
 
                                         break;
                                     case "yes":

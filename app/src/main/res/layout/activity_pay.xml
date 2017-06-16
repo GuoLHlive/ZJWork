@@ -63,9 +63,9 @@
                 android:id="@+id/pay_license_plate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20px"
+                android:textSize="18px"
                 android:textColor="@color/black"
-                android:layout_marginLeft="5px"
+                android:layout_marginLeft="2px"
                 android:layout_toRightOf="@+id/pay_txt_car"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
@@ -110,30 +110,51 @@
             android:layout_width="match_parent"
             android:layout_height="50px"
             android:orientation="horizontal"
-            android:layout_marginTop="10px"
+            android:layout_marginTop="3px"
             >
             <Button
                 android:id="@+id/pay_bnt_one"
                 style="@style/ButtonStyle"
+                android:text="@string/pay_readPay"
                 />
             <Button
                 android:id="@+id/pay_bnt_two"
                 style="@style/ButtonStyle"
+                android:text="@string/pay_refund"
                 />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50px"
             android:orientation="horizontal"
-            android:layout_marginTop="10px"
+            android:layout_marginTop="3px"
             >
             <Button
                 android:id="@+id/pay_bnt_three"
                 style="@style/ButtonStyle"
+                android:text="@string/pay_r_print"
                 />
             <Button
                 android:id="@+id/pay_bnt_four"
                 style="@style/ButtonStyle"
+                android:text="@string/pay_print_money"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50px"
+            android:orientation="horizontal"
+            android:layout_marginTop="3px"
+            >
+            <Button
+                android:id="@+id/pay_bnt_five"
+                style="@style/ButtonStyle"
+                android:text="@string/pay_escOrder"
+                />
+            <Button
+                android:id="@+id/pay_bnt_six"
+                style="@style/ButtonStyle"
+                android:text="@string/pay_carOut"
                 />
         </LinearLayout>
     </LinearLayout>
